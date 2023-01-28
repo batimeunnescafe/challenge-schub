@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: challenge
+  namespace: dev
+spec:
+  selector:
+    matchLabels:
+      app: challenge-k8s
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: challenge-k8s
+    spec:
+      containers:
+        - name: challenge
+          image: "registry.gitlab.com/andres.bmth.bt/the-one-devops-bootcamp"
+          imagePullPolicy: Always
+          resources:
+            limits:
+              cpu: "1"
+            requests:
+              cpu: "0.2"
+          ports:
+            - containerPort: 80
+              protocol: TCP
