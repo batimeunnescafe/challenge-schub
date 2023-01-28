@@ -10,4 +10,4 @@ spec:
       targetPort: 80
   selector:
     app: challenge-k8s
-  type: ClusterIP
+  type: NodePort
