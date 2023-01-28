@@ -4,7 +4,7 @@ metadata:
   name: challenge-k8s
 spec:
   selector:
-    app.kubernetes.io/name: challenge-k8s
+    app: challenge-k8s
   ports:
     - protocol: TCP
       port: 80
