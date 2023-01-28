@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: challenge
-          image: "registry.gitlab.com/andres.bmth.bt/the-one-devops-bootcamp"
+          image: batimeunnescafe/challenge-k8s:latest
           imagePullPolicy: Always
           resources:
             limits:
