@@ -1,13 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: challenge
-  namespace: dev
+  name: challenge-k8s
 spec:
   selector:
     matchLabels:
       app: challenge-k8s
-  replicas: 1
   template:
     metadata:
       labels:
