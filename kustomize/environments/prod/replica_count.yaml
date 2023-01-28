@@ -1,8 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata: 
-  name: hello-kubernetes 
+  name: challenge-k8s 
   labels:  
-    name: hello-kubernetes
+    name: challenge-k8s
 spec:
   replicas: 4
