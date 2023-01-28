@@ -40,7 +40,7 @@ function App() {
           <div className="menu">
             <ul>
               <li><a href="#top">Home</a></li>
-              <li><a href="#services">services</a></li>
+              <li><a href="#services">Services</a></li>
               <li><a href="#about">About Us</a></li>
               <li><a href="#pricing">Pricing</a></li>
               <li><a href="#partners">Our partners</a></li>
