@@ -49,7 +49,7 @@ function App() {
           </div>
           <div class="menu-overlay" id="menu-overlay">
               <ul class="overlay">
-                <li><a href="#top">home</a></li>
+                <li><a href="#top">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#pricing">Pricing</a></li>
