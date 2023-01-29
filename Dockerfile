@@ -1,33 +1,24 @@
-FROM node:16-alpine as build
+# BUILD STAGE
+FROM node:14-alpine as build-step
 
 WORKDIR /app
 
-COPY package.json .
+COPY package.json /app/
 
-COPY package-lock.json .
+RUN npm i
 
-# COPY .env.development . 
+COPY . /app
 
-# COPY .env.example .
+RUN npm run build
 
-RUN npm install
+# ========================================
+# NGINX STAGE
+# ========================================
 
-COPY . .
+FROM nginx:1.23-alpine 
 
-EXPOSE 3000
+WORKDIR /usr/share/nginx/html/
 
-CMD [ "npm", "start" ]
+COPY --from=build-step /app/build ./
 
-#Nginx-app
-
-FROM nginx:1.16.0-alpine
-
-COPY --from=build /app/build /usr/share/nginx/html
-
-RUN rm /etc/nginx/conf.d/default.conf
-
-COPY nginx/nginx.conf /etc/nginx/conf.d
-
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
+CMD [ "nginx", "-g", "daemon off;" ]
