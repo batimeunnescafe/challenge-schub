@@ -22,3 +22,4 @@ WORKDIR /usr/share/nginx/html/
 COPY --from=build-step /app/build ./
 
 CMD [ "nginx", "-g", "daemon off;" ]
+
