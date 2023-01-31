@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1 
+kind: Ingress  
+metadata:  
+  name: ingress  
+  namespace: dev
+  annotations: 
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    cert-manager.io/cluster-issuer: selfsigned-cluster-issuer  
+spec:  
+  rules:
+    - host: app-127-0-0-1.nip.io
+      http:
+        paths:
+          - path: / 
+            pathType: Prefix
+            backend:
+              service:
+                name: challenge-k8s
+                port:
+                  number: 80
+  tls:
+  - hosts:
+    - app-127-0-0-1.nip.io
+    secretName: test-app-cert-tls
