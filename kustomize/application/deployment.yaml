@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: challenge
-          image: batimeunnescafe/challenge-k8s:latest
+          image: nginx:latest
           imagePullPolicy: Always
           resources:
             limits:
