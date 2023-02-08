@@ -1,3 +1,8 @@
+## **Instructive link** ##
+
+https://docs.google.com/document/d/1f2DJ-kLxZX8sMWvJnC0wd4Xw4caj3ApiunD9pBbS2_E/edit?usp=sharing
+
+
 ### **Describe your approach to set up a CD solution for a Kubernetes environment, where there is a need to serve five teams of developers that can’t have direct kubectl access to the cluster and maintain their autonomy to deploy and see the production environment for debugging purposes.** ###
 
 *I think that the most suitable option for this problem is creating users on ArgoCD and giving each team of developers a user. If you just create the user, it'll only have read access to see all deployments and services that are deployed on the cluster. The would be able to see the state of pods and also clic on it to see why they're down. Of course they won't be able to recreate or redeploy it.
